@@ -1,4 +1,7 @@
 *Seminar 4 additional notes
+
+*Select codes first, then press "CTRL + D" to run them
+
 *Note 1: pwd : display the path of the current working directory
 pwd
 cd
