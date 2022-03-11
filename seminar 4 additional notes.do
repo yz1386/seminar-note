@@ -197,10 +197,3 @@ clear all
 use data1.dta,replace
 keep if year > 2010 & bm > 1.3 & total_asset >900
 
-/*
-clear all
-use  "seminar event analysis data 1", replace
-keep if date > date("20200401","YMD")
-sort date permno
-save subsample1.dta,replace
-*/
