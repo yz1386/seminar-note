@@ -1,4 +1,4 @@
-*Seminar 4 additional notes
+*Seminar 4 additional notes : Data preparations
 
 *Select codes first, then press "CTRL + D" to run them
 
