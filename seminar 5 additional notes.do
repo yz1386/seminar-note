@@ -139,7 +139,11 @@ reg total_asset bm liability ratings
 * If I define global macro once,  I could run each line using this global macro
 global my_var1 "bm"
 
+reg total_asset bm 
+
 reg total_asset $my_var1 
+
+reg total_asset bm liability ratings
 
 reg total_asset $my_var1 liability ratings
 
