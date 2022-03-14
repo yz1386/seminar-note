@@ -2,15 +2,21 @@
 
 *Select codes first, then press "CTRL + D" to run them
 
+*****************************************************************
 *Note 1: pwd : display the path of the current working directory
+*****************************************************************
 pwd
 cd
 
-*Note 2: If your code is too long and try to use "///" to break it into two lines
+************************************************************************************************************************
+*Note 2: If your code is too long and try to use "///" to break it into two lines, please select these two lines to run.
+************************************************************************************************************************
 display "Hello " ///
 "world"
 
+***********************************
 *Note 3: import/export excel files
+***********************************
 clear all
 input x y
 32 56
@@ -23,7 +29,9 @@ export excel using "test.xlsx", sheet("use") firstrow(variables) replace
 clear all
 import excel "test.xlsx", sheet("use") firstrow clear
 
+***********************
 *Note 4: generate dates
+***********************
 clear all
 input year month day
 2010 01 3
@@ -37,7 +45,9 @@ gen year=year(date)
 gen month=month(date)
 gen day=day(date)
 
+*********************************************
 *Note 5: xtset to declare data to panel data 
+*********************************************
 clear all
 input str20 cusip year total_asset bm 
 A 2010 1000 1.2
@@ -53,7 +63,9 @@ end
 encode cusip, generate (cusip1)
 xtset cusip1 year
 
+************************
 *Note 6: drop duplicates
+************************
 clear all
 input str20 company year total_asset bm 
 A 2010 1000 1.2
@@ -99,7 +111,9 @@ C 2012 800 1.3
 end 
 duplicates drop company year, force
 
+******************
 *Note 7: take lags
+******************
 clear all
 input str20 company year total_asset bm 
 A 2010 1000 1.2
@@ -117,7 +131,9 @@ gen bm_lag1_wrong=bm[_n-1] /*Don't do this. This is wrong to take lags*/
 sort company year
 by company: gen bm_lag1_correct=bm[_n-1] /*This is correct to take lags*/
 
+************************************************
 *Note 8: examples for merging/appending datasets
+************************************************
 *str20 tells Stata it is a string variable and that it could be up to 20 characters wide.
 clear all
 input str20 company year total_asset bm 
@@ -185,7 +201,9 @@ append  using data4
 
 *Always check your datasets after merging or appending!!
 
+*************************************************************
 *Note 9: split the sample into subsamples based on conditions
+*************************************************************
 clear all
 use data1.dta,replace
 keep if year > 2010
