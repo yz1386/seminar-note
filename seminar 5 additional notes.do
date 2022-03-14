@@ -92,6 +92,7 @@ sum total_asset bm liability ratings, detail
 *ssc install outreg2
 
 capture erase sum.xls
+capture erase sum.txt
 set matsize 10000
 outreg2 using sum.xls, replace sum(detail) keep( total_asset bm liability ratings) eqkeep( N mean sum sd min p25 p50 p75 max)  label
 
