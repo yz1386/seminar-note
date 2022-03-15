@@ -1,4 +1,4 @@
-*Seminar 5 additional notes : Basic descriptive analysis & Stata Loops and Marco introduction
+*Seminar 5 additional notes : Basic descriptive analysis & Stata Loops and Marco introduction   @author: Dr. You Zhou, Leeds University Business School
 
 *********************************
 *note 1: prepare examples data
