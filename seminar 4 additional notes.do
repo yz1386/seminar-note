@@ -1,4 +1,4 @@
-*Seminar 4 additional notes : Data preparations
+*Seminar 4 additional notes : Data preparations      @author: Dr. You Zhou, Leeds University Business School
 
 *Select codes first, then press "CTRL + D" to run them
 
