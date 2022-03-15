@@ -89,7 +89,8 @@ sum
 
 sum total_asset bm liability ratings, detail
 
-*ssc install outreg2
+*install the command outreg2
+ssc install outreg2
 
 capture erase sum.xls
 capture erase sum.txt
@@ -101,7 +102,8 @@ outreg2 using sum.xls, replace sum(detail) keep( total_asset bm liability rating
 *********************************************
 use example.dta,clear
 
-*ssc install asdoc
+*install the command asdoc
+ssc install asdoc
 
 corr total_asset bm liability ratings
 
