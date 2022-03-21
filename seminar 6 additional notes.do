@@ -130,6 +130,7 @@ replace bm_rank1 = 4 if bm > 1.6 & bm != .
 quantiles bm, gen(bm_rank2) n(4)
 
 *method 3
+ssc install egenmore
 egen bm_rank3 = xtile(bm), nq(4)
 
 *percentile rank by group
