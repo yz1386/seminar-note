@@ -185,7 +185,15 @@ export excel using "ttest_statistics.xlsx", sheet("use") firstrow(variables) rep
 clear all
 use example.dta,clear
 
-*2.1 Wicloxon signed rank test (one sample)
+*2.1 find the median value first
+
+*find the median value first
+*see the  50 Percentile (median) of total_asset
+
+sum total_asset,detail
+
+
+*2.1.1 Wicloxon signed rank test (one sample)
 
 signrank total_asset = 0
 
@@ -209,7 +217,7 @@ export excel using "test_statistics.xlsx", sheet("use") firstrow(variables) repl
 *more details see
 help signrank
 
-*2.2 Sign test could also be used to test the equality of meadian
+*2.1.2 Sign test could also be used to test the equality of meadian
 clear all
 use example.dta,clear
 
