@@ -1,0 +1,5 @@
+1. The CRSP stock file we used is daily data, not monthly data.
+
+2. Please download and use the lastest version of additional notes.
+
+   https://github.com/yz1386/seminar-note
