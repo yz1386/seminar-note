@@ -144,6 +144,9 @@ bysort year: quantiles bm, gen(bm_rank2a) n(4)
 *method 3 by group
 egen bm_rank3a = xtile(bm), by(year) nq(4)
 
+*be careful to use method 2 and method 3 since they may give different results in small samples
+*Please always check your ranking variables after running commands
+
 *******************************************
 *note 5: t-tests and output specific values
 *******************************************
