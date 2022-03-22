@@ -1,4 +1,4 @@
-1. The CRSP stock file and market return file we used are daily data, not monthly data.
+1. The CRSP stock file we used is daily data, not monthly data.
 
 2. Please download and use the lastest version of additional notes.
 
