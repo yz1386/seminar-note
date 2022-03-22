@@ -127,6 +127,7 @@ replace bm_rank1 = 3 if bm > 1.35 & bm <= 1.6
 replace bm_rank1 = 4 if bm > 1.6 & bm != .
 
 *method 2
+ssc install quantiles
 quantiles bm, gen(bm_rank2) n(4)
 
 *method 3
@@ -283,7 +284,9 @@ ssc install outreg2,replace
 *see the user manual of outreg2
 help outreg2
 
+
 * an example to use
+
 use example.dta,clear
 egen firm_id = group(company)
 xtset firm_id year
@@ -293,8 +296,17 @@ label var liability "Total liability"
 label var ratings "Ratings"
 label var roa "Return on assets"
 
+***********************************
+*your key independent variable X
+***********************************
 global my_var1 "bm"
 *global my_var1 "roa"
+
+************************
+*your control variables
+************************
+global my_control1 "liability"
+global my_control2 "liability ratings"
 
 
 *Table 1
@@ -318,6 +330,17 @@ reg liability $my_var1 ratings total_asset
 outreg2 using myreg2.xls, addstat(Adjusted R-squared, e(r2_a))  tstat bdec(2) tdec(2) rdec(2) parenthesis(tstat) append ctitle(title 3)  addtext(control effect 1, Yes, control effect 2,Yes,control effect 3, Yes) label
 
 
+*Table 3
+capture erase myreg3.txt
+capture erase myreg3.xls
+reg total_asset $my_var1 
+outreg2 using myreg3.xls, addstat(Adjusted R-squared, e(r2_a))  tstat bdec(2) tdec(2) rdec(2) parenthesis(tstat) append ctitle(title 1)  addtext(control effect 1, Yes, control effect 2,Yes,control effect 3, Yes) label
+reg total_asset $my_var1  $my_control1
+outreg2 using myreg3.xls, addstat(Adjusted R-squared, e(r2_a))  tstat bdec(2) tdec(2) rdec(2) parenthesis(tstat) append ctitle(title 2)  addtext(control effect 1, Yes, control effect 2,Yes,control effect 3, Yes) label
+reg total_asset $my_var1  $my_control2
+outreg2 using myreg3.xls, addstat(Adjusted R-squared, e(r2_a))  tstat bdec(2) tdec(2) rdec(2) parenthesis(tstat) append ctitle(title 3)  addtext(control effect 1, Yes, control effect 2,Yes,control effect 3, Yes) label
+
+
 *****************************************
 *note 9: regress and output using estout
 *****************************************
@@ -326,7 +349,7 @@ outreg2 using myreg2.xls, addstat(Adjusted R-squared, e(r2_a))  tstat bdec(2) td
 ssc install estout, replace
 
 *see http://repec.org/bocode/e/estout/estout.html
-*see the user manual of outreg2
+*see the user manual of estout
 help estout  
 
 * an example to use
