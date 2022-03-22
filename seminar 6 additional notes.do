@@ -220,6 +220,9 @@ help signtest
 ***********************
 *note 6: one-way anova 
 ***********************
+
+ssc install egenmore
+
 use example.dta,clear
 egen size_rank = xtile(total_asset), nq(4)
 oneway bm size_rank , tabulate
