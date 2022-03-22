@@ -188,7 +188,7 @@ use example.dta,clear
 *2.1 find the median value first
 
 *find the median value first
-*see the  50 Percentile (median) of total_asset
+*see the 50th Percentile (median) of total_asset
 
 sum total_asset,detail
 
