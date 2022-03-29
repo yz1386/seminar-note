@@ -2,7 +2,7 @@
 
 *install commands first
 ssc install outreg2,replace
-ssc install asdoc
+ssc install asdoc,replace
 
 set more off
 
